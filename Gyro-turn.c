@@ -5,8 +5,6 @@
 //  Created by Zan on 2020/3/13.
 //
 
-#include "Gyro-turn.h"
-#include <kipr/botball.h>
 double bias;
 double conversion = 4.01; //这个值可以控制转向角度
 int findBias(){
@@ -50,12 +48,4 @@ void turn(int angle, int speed){
         currentAngle += 0.5*(newGyro-oldGyro)*timeInterval/1000 + oldGyro * timeInterval/1000 ;
     }
 }
-int main ()
-{
-    findBias();
-    readGyro();
-    turn(90,400);
-    msleep(1000);
-    ao();
-    return 0;
-}
+
